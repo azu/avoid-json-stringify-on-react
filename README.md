@@ -14,6 +14,9 @@ React's document said that
 
 Deep Equal (`JSON.stringify(prevProps) === JSON.stringify(nextProps)`):
 
+![image](https://user-images.githubusercontent.com/19714/33241650-c0a6df32-d30b-11e7-97f1-20684ce97e75.png)
+
+
 ```
 App.tsx:35 Name: ⚛ A.shouldComponentUpdate, Duration: 4.319999999999709
 
@@ -50,6 +53,9 @@ App.tsx:35 Name: ⚛ E.shouldComponentUpdate, Duration: 0.009999999999763531
 ## After
 
 Shallow Equal(Use [shallow-equal-object](https://github.com/azu/shallow-equal-object "shallow-equal-object"))
+
+![image](https://user-images.githubusercontent.com/19714/33241630-9eb67ed2-d30b-11e7-83ac-3b2d66d02029.png)
+
 
 ```
 Name: ⚛ A.shouldComponentUpdate, Duration: 0.3450000000000273
