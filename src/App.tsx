@@ -16,7 +16,6 @@ export interface ComponentProps {
     other: any
 }
 
-
 const largeUnRelatedObject = {
     a: new Array(10000),
     b: new Array(10000),
@@ -27,15 +26,23 @@ const largeUnRelatedObject = {
     }
 };
 
-
+// observe
 const observer = new (window as any).PerformanceObserver((list: any) => {
+    let components: string[] = [];
+    let totalDuration = 0;
     list.getEntries().forEach((entry: any) => {
         // Display each reported measurement on console
         if (entry.name.includes("shouldComponentUpdate")) {
+            components.push(entry.name);
+            totalDuration += entry.duration;
             console.log("Name: " + entry.name +
                 ", Duration: " + (entry.duration) + "\n");
         }
-    })
+    });
+    if (components.length > 0) {
+        console.log(`Total: ${totalDuration}`, components);
+    }
+
 });
 observer.observe({ entryTypes: ['measure'] });
 
@@ -44,20 +51,46 @@ class App extends React.Component {
         count: 0
     };
 
-    createComponentProps = (): ComponentProps => {
+
+    createPropsWithUnnecessaryProps = () => {
         return {
-            b: {
-                c: {
-                    d: {
-                        e: {
-                            count: this.state.count
-                        }
-                    }
-                }
-            },
-            other: largeUnRelatedObject
+            ...this.createAProps(),
+            largeUnRelatedObject
+        }
+    };
+
+    createAProps = () => {
+        return {
+            a: this.createBProps()
         };
     };
+
+    createBProps = () => {
+        return {
+            b: this.createCProps()
+        };
+    };
+
+    createCProps = () => {
+        return {
+            c: this.createDProps()
+        };
+    };
+
+    createDProps = () => {
+        return {
+            d: this.createEProps()
+        };
+    };
+
+    createEProps = () => {
+        return {
+            e: {
+                count: this.state.count
+            }
+        };
+    };
+
     onClick = () => {
         this.setState({
             count: this.state.count + 1
@@ -67,7 +100,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <A a={this.createComponentProps()}/>
+                <A {...this.createPropsWithUnnecessaryProps()}/>
                 <button onClick={this.onClick}>+1</button>
             </div>
         );
