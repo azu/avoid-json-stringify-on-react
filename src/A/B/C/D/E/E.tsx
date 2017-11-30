@@ -1,12 +1,12 @@
 import * as React from "react";
 import { BaseComponent } from "../../../../../BaseComponent";
 
-export class E extends BaseComponent<{
-    e: {
-        count: number
-    }
-}, {}> {
+export interface EProps {
+    count: number
+}
+
+export class E extends BaseComponent<EProps, {}> {
     render() {
-        return <p>Count:{this.props.e.count}</p>
+        return <p>Count:{this.props.count}</p>
     }
 }
