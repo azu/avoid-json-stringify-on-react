@@ -10,7 +10,7 @@ export const isShallowEqual = (prevState: any, nextState: any) => {
 
 export abstract class BaseComponent<P, S> extends React.Component<P, S> {
     shouldComponentUpdate(nextProps: P) {
-        const shouldUpdate = !isDeepEqual(this.props, nextProps);
+        const shouldUpdate = !isShallowEqual(this.props, nextProps);
         return shouldUpdate;
     }
 }
