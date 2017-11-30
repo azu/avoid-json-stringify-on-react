@@ -1,17 +1,13 @@
 import * as React from "react";
 import { BaseComponent } from "../../../BaseComponent";
-import { D } from "./D/D";
+import { D, DProps } from "./D/D";
 
-export class C extends BaseComponent<{
-    c: {
-        d: {
-            e: {
-                count: number
-            }
-        }
-    }
-}, {}> {
+export type CProps = {
+    d: DProps
+};
+
+export class C extends BaseComponent<CProps, {}> {
     render() {
-        return <D d={this.props.c.d}/>
+        return <D {...this.props.d}/>
     }
 }

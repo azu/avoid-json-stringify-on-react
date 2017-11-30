@@ -4781,9 +4781,9 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-shallow-equal-object@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/shallow-equal-object/-/shallow-equal-object-1.0.1.tgz#a402410fb4b7c15370ec7e78701e9280f1c1d1e4"
+shallow-equal-object@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/shallow-equal-object/-/shallow-equal-object-1.1.0.tgz#1acca0c4bdcbc01e500b00b7e15dec2ba5a9b11e"
 
 shebang-command@^1.2.0:
   version "1.2.0"

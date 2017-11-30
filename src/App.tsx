@@ -1,30 +1,19 @@
 import * as React from 'react';
 import './App.css';
-import { A } from "./A/A";
+import { A, AProps } from "./A/A";
+import { BProps } from "./A/B/B";
+import { CProps } from "./A/B/C/C";
+import { DProps } from "./A/B/C/D/D";
+import { EProps } from "./A/B/C/D/E/E";
+import { List } from "./List/List";
 
 
-export interface ComponentProps {
-    b: {
-        c: {
-            d: {
-                e: {
-                    count: number
-                }
-            }
-        }
-    },
-    other: any
+export interface ComponentState {
+    a: AProps,
+    largeList: string[];
 }
 
-const largeUnRelatedObject = {
-    a: new Array(10000),
-    b: new Array(10000),
-    c: new Array(10000),
-    e: new Array(10000),
-    f: {
-        ff: new Array(10000)
-    }
-};
+const frozenLargeList = new Array(10000).fill("x");
 
 // observe
 const observer = new (window as any).PerformanceObserver((list: any) => {
@@ -40,68 +29,72 @@ const observer = new (window as any).PerformanceObserver((list: any) => {
         }
     });
     if (components.length > 0) {
-        console.log(`Total: ${totalDuration}`, components);
+        console.log(`Total shouldComponentUpdate: ${totalDuration}`);
+        console.log(`Updated components:`, components.join(", "));
     }
 
 });
 observer.observe({ entryTypes: ['measure'] });
 
-class App extends React.Component {
-    state = {
-        count: 0
-    };
 
+let count = 0;
 
-    createPropsWithUnnecessaryProps = () => {
+class App extends React.Component<{}, ComponentState> {
+    constructor(props: any) {
+        super(props);
+        this.state = this.createPropsWithUnnecessaryProps();
+    }
+
+    createPropsWithUnnecessaryProps = (prevProps?: ComponentState): ComponentState => {
         return {
-            ...this.createAProps(),
-            largeUnRelatedObject
+            a: this.createAProps(prevProps && prevProps.a),
+            largeList: frozenLargeList
         }
     };
 
-    createAProps = () => {
+    createAProps = (prevProps?: AProps): AProps => {
         return {
-            a: this.createBProps()
+            b: this.createBProps(prevProps && prevProps.b)
         };
     };
 
-    createBProps = () => {
+    createBProps = (prevProps?: BProps): BProps => {
         return {
-            b: this.createCProps()
+            c: this.createCProps(prevProps && prevProps.c)
         };
     };
 
-    createCProps = () => {
+    createCProps = (prevProps?: CProps): CProps => {
         return {
-            c: this.createDProps()
+            d: this.createDProps(prevProps && prevProps.d)
         };
     };
 
-    createDProps = () => {
+    createDProps = (prevProps?: DProps): DProps => {
         return {
-            d: this.createEProps()
+            e: this.createEProps(prevProps && prevProps.e)
         };
     };
 
-    createEProps = () => {
+    createEProps = (prevProps?: EProps): EProps => {
         return {
-            e: {
-                count: this.state.count
-            }
+            count: count
         };
     };
 
     onClick = () => {
-        this.setState({
-            count: this.state.count + 1
-        });
+        count++;
+        this.setState(this.createPropsWithUnnecessaryProps(this.state));
     };
 
     render() {
+        const state = this.createPropsWithUnnecessaryProps(this.state);
         return (
             <div className="App">
-                <A {...this.createPropsWithUnnecessaryProps()}/>
+                <A {...state.a}/>
                 <button onClick={this.onClick}>+1</button>
+                <hr/>
+                <List items={state.largeList}/>
             </div>
         );
     }

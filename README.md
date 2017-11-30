@@ -18,35 +18,48 @@ Deep Equal (`JSON.stringify(prevProps) === JSON.stringify(nextProps)`):
 
 
 ```
-App.tsx:35 Name: ⚛ A.shouldComponentUpdate, Duration: 4.319999999999709
+Name: ⚛ A.shouldComponentUpdate, Duration: 0.9350000000004002
 
-App.tsx:35 Name: ⚛ B.shouldComponentUpdate, Duration: 0.015000000000100044
+App.tsx:27 Name: ⚛ B.shouldComponentUpdate, Duration: 0.010000000000218279
 
-App.tsx:35 Name: ⚛ C.shouldComponentUpdate, Duration: 0.009999999999990905
+App.tsx:27 Name: ⚛ C.shouldComponentUpdate, Duration: 1.1300000000001091
 
-App.tsx:35 Name: ⚛ D.shouldComponentUpdate, Duration: 0.009999999999990905
+App.tsx:27 Name: ⚛ D.shouldComponentUpdate, Duration: 0.015000000000327418
 
-App.tsx:35 Name: ⚛ E.shouldComponentUpdate, Duration: 0.029999999999972715
+App.tsx:27 Name: ⚛ E.shouldComponentUpdate, Duration: 0.009999999999308784
 
-App.tsx:35 Name: ⚛ A.shouldComponentUpdate, Duration: 4.960000000000036
+App.tsx:27 Name: ⚛ List.shouldComponentUpdate, Duration: 5.364999999999782
 
-App.tsx:35 Name: ⚛ B.shouldComponentUpdate, Duration: 0.02500000000009095
+App.tsx:32 Total shouldComponentUpdate: 7.4650000000001455
+App.tsx:33 Update components: ⚛ A.shouldComponentUpdate, ⚛ B.shouldComponentUpdate, ⚛ C.shouldComponentUpdate, ⚛ D.shouldComponentUpdate, ⚛ E.shouldComponentUpdate, ⚛ List.shouldComponentUpdate
+App.tsx:27 Name: ⚛ A.shouldComponentUpdate, Duration: 0.014999999999417923
 
-App.tsx:35 Name: ⚛ C.shouldComponentUpdate, Duration: 0.010000000000218279
+App.tsx:27 Name: ⚛ B.shouldComponentUpdate, Duration: 0.004999999999199645
 
-App.tsx:35 Name: ⚛ D.shouldComponentUpdate, Duration: 0.009999999999763531
+App.tsx:27 Name: ⚛ C.shouldComponentUpdate, Duration: 0.019999999999527063
 
-App.tsx:35 Name: ⚛ E.shouldComponentUpdate, Duration: 0.010000000000218279
+App.tsx:27 Name: ⚛ D.shouldComponentUpdate, Duration: 0.005000000000109139
 
-App.tsx:35 Name: ⚛ A.shouldComponentUpdate, Duration: 3.9400000000000546
+App.tsx:27 Name: ⚛ E.shouldComponentUpdate, Duration: 0
 
-App.tsx:35 Name: ⚛ B.shouldComponentUpdate, Duration: 0.004999999999654392
+App.tsx:27 Name: ⚛ List.shouldComponentUpdate, Duration: 5.770000000000437
 
-App.tsx:35 Name: ⚛ C.shouldComponentUpdate, Duration: 0.005000000000109139
+App.tsx:32 Total shouldComponentUpdate: 5.81499999999869
+App.tsx:33 Update components: ⚛ A.shouldComponentUpdate, ⚛ B.shouldComponentUpdate, ⚛ C.shouldComponentUpdate, ⚛ D.shouldComponentUpdate, ⚛ E.shouldComponentUpdate, ⚛ List.shouldComponentUpdate
+App.tsx:27 Name: ⚛ A.shouldComponentUpdate, Duration: 0.015000000000327418
 
-App.tsx:35 Name: ⚛ D.shouldComponentUpdate, Duration: 0.005000000000563887
+App.tsx:27 Name: ⚛ B.shouldComponentUpdate, Duration: 0.005000000000109139
 
-App.tsx:35 Name: ⚛ E.shouldComponentUpdate, Duration: 0.009999999999763531
+App.tsx:27 Name: ⚛ C.shouldComponentUpdate, Duration: 0.005000000000109139
+
+App.tsx:27 Name: ⚛ D.shouldComponentUpdate, Duration: 0.005000000000109139
+
+App.tsx:27 Name: ⚛ E.shouldComponentUpdate, Duration: 0.005000000001018634
+
+App.tsx:27 Name: ⚛ List.shouldComponentUpdate, Duration: 5.154999999999745
+
+App.tsx:32 Total shouldComponentUpdate: 5.190000000001419
+App.tsx:33 Update components: ⚛ A.shouldComponentUpdate, ⚛ B.shouldComponentUpdate, ⚛ C.shouldComponentUpdate, ⚛ D.shouldComponentUpdate, ⚛ E.shouldComponentUpdate, ⚛ List.shouldComponentUpdate
 ```
 
 
