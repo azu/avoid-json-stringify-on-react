@@ -1,11 +1,11 @@
 import * as React from "react";
-import { shallowEqual } from "shallow-equal-object";
+import { shallowEqualProps } from "shallow-equal-props";
 
 export const isDeepEqual = (prevState: any, nextState: any) => {
     return JSON.stringify(prevState) === JSON.stringify(nextState);
 };
 export const isShallowEqual = (prevState: any, nextState: any) => {
-    return shallowEqual(prevState, nextState);
+    return shallowEqualProps(prevState, nextState);
 };
 
 export abstract class BaseComponent<P, S> extends React.Component<P, S> {

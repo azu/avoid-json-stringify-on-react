@@ -4782,8 +4782,14 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     safe-buffer "^5.0.1"
 
 shallow-equal-object@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/shallow-equal-object/-/shallow-equal-object-1.1.0.tgz#1acca0c4bdcbc01e500b00b7e15dec2ba5a9b11e"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/shallow-equal-object/-/shallow-equal-object-1.1.1.tgz#0c016b8cc16dc59ab76739b6eeaa9c99d68beef7"
+
+shallow-equal-props@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/shallow-equal-props/-/shallow-equal-props-1.0.2.tgz#42be416fd7aec152a3430dc96cc05db2e81d4dcf"
+  dependencies:
+    shallow-equal-object "^1.1.0"
 
 shebang-command@^1.2.0:
   version "1.2.0"

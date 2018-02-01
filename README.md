@@ -76,7 +76,7 @@ App.tsx:33 Update components: ⚛ A.shouldComponentUpdate, ⚛ B.shouldComponent
 
 ## After
 
-Shallow Equal(Use [shallow-equal-object](https://github.com/azu/shallow-equal-object "shallow-equal-object"))
+Shallow Equal(Use [shallow-equal-props](https://github.com/azu/shallow-equal-props "shallow-equal-props"))
 
 ![image](https://user-images.githubusercontent.com/19714/33408628-d3677756-d5ba-11e7-83a3-5113a2e09739.png)
 

@@ -6,7 +6,7 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts-ts": "2.8.0",
-    "shallow-equal-object": "^1.1.0"
+    "shallow-equal-props": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
